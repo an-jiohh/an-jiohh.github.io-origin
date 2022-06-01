@@ -1,0 +1,669 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>까먹을 때쯤 쳐다보는 MySQL 기초 아직 정하지 않은 이름 아직 정하지 않은 이름</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="An Jiho">
+  
+  <meta property="article:author" content="An Jiho">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="아직 정하지 않은 이름">
+<meta property="og:title" content="까먹을 때쯤 쳐다보는 MySQL 기초">
+<meta property="og:url" content="http://localhost:4000/data%20base/DB/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-11T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-10-13T01:30:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/data%20base/DB/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "An Jiho",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="아직 정하지 않은 이름 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/author.png" alt="An Jiho" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">An Jiho</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="까먹을 때쯤 쳐다보는 MySQL 기초">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-09-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-10-13T01:30:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/data%20base/DB/" class="u-url" itemprop="url">까먹을 때쯤 쳐다보는 MySQL 기초
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-11T00:00:00+09:00">September 11, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="mysql-본질">MySQL 본질</h2>
+<p>데이터베이스의 기능이 방대하게 존재하며 이는
+데이터와 관련되서 일어날 수 있는 일이 많기 때문이다</p>
+
+<p>그러나 복잡한 기술도 그 중심에 자리잡고있는 핵심은 복잡하지 않다.<br />
+데이터베이스의 본질을 생각하였을 때 데이터를 어떻게 입력과 출력이 이뤄지는지가 중요한 본질이라고 생각할 수 있다.<br />
+여기서 입력은 다시 생성, 수정, 삭제로 나눌 수 있어 데이터베이스가 가져야하는 기본적인 기능은 생성(Create), 출력(Read), 수정(Update), 삭제(Delete)로 정리 할 수 있으며 이를 CRUD라고 한다. 그외 복잡한 기능들은 CRUD를 포함하고 있는 그 외적인 것에 불과하다.</p>
+<h2 id="mysql-구성요소">MySQL 구성요소</h2>
+<p>많아진 표들을 정리할 필요성이 생김<br />
+연관된 표들을 그룹핑해서 파일의 그룸을함 = 데이터베이스(스키마)<br />
+스키마 = 표들을 그룹핑 할때 사용하는 일종의 폴더<br />
+스키마는 서로 연관된 표들을 그룹핑해준다.<br />
+데이터베이스 서버 = 여러가지 스키마를 저장한다.<br />
+스키마 안에는 표들이 있다.</p>
+
+<h2 id="스키마의-사용">스키마의 사용</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">opendb</span><span class="p">;</span> <span class="o">#</span><span class="err">스키마</span> <span class="err">생성</span>
+<span class="k">DROP</span> <span class="k">DATABASE</span> <span class="n">opendb</span><span class="p">;</span> <span class="o">#</span><span class="err">스키마</span> <span class="err">제거</span>
+<span class="k">SHOW</span> <span class="n">DATABASES</span><span class="p">;</span> <span class="o">#</span><span class="err">스키마들의</span> <span class="err">리스트</span> <span class="err">보기</span>
+<span class="n">USE</span> <span class="n">opendb</span><span class="p">;</span> <span class="o">#</span><span class="err">명령</span> <span class="err">실행</span> <span class="err">대상</span> <span class="err">변경</span>
+</code></pre></div></div>
+
+<h2 id="테이블-생성-및-삭제">테이블 생성 및 삭제</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">topic</span><span class="p">(</span> <span class="o">#</span><span class="n">topic</span> <span class="err">테이블</span> <span class="err">생성</span>
+<span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span> <span class="o">#</span><span class="err">빈칸일</span> <span class="err">경우</span> <span class="err">자동으로</span> <span class="err">증가</span>
+<span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span> 
+<span class="n">description</span> <span class="nb">text</span> <span class="k">null</span><span class="p">,</span>
+<span class="n">created</span> <span class="nb">datetime</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="n">author</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">null</span><span class="p">;</span>
+<span class="n">profile</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">null</span><span class="p">,</span>
+<span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">id</span><span class="p">));</span> <span class="o">#</span><span class="k">primary</span> <span class="k">key</span> <span class="o">=</span> <span class="n">id</span>
+<span class="p">);</span>
+<span class="k">SHOW</span> <span class="n">TABLES</span><span class="p">;</span> <span class="o">#</span><span class="err">테이블</span> <span class="err">리스트</span> <span class="err">열람</span>
+<span class="k">DESC</span> <span class="n">topic</span><span class="p">;</span> <span class="o">#</span><span class="n">topic</span> <span class="err">테이블의</span> <span class="err">속성</span> <span class="err">열람</span>
+<span class="k">DROP</span> <span class="k">table</span> <span class="n">topic</span><span class="p">;</span> <span class="o">#</span><span class="err">테이블</span> <span class="err">삭제</span>
+<span class="k">RENAME</span> <span class="k">table</span> <span class="n">topic</span> <span class="k">to</span> <span class="n">topic_backup</span><span class="p">;</span> <span class="o">#</span><span class="n">topic</span><span class="err">을</span> <span class="n">topic_backup</span><span class="err">으로</span> <span class="err">바꿈</span>
+</code></pre></div></div>
+
+<h2 id="데이터-생성create">데이터 생성(Create)</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="k">into</span> <span class="n">topic</span> <span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="n">description</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span><span class="p">,</span><span class="n">profile</span><span class="p">)</span> <span class="k">values</span><span class="p">(</span><span class="nv">"MySQL"</span><span class="p">,</span><span class="nv">"MySQL is ..."</span><span class="p">,</span><span class="n">NOW</span><span class="p">(),</span><span class="nv">"anjohh"</span><span class="p">,</span><span class="nv">"developer"</span><span class="p">);</span>   <span class="o">#</span><span class="n">id</span><span class="o">=</span><span class="n">auto_increment</span><span class="err">가</span> <span class="err">있으므로</span> <span class="err">생략</span>
+</code></pre></div></div>
+
+<h2 id="데이터-읽기read">데이터 읽기(Read)</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">topic</span><span class="p">;</span> <span class="o">#</span><span class="err">전체</span> <span class="err">열람</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="k">from</span> <span class="n">topic</span><span class="p">;</span> <span class="o">//</span><span class="n">topic</span> <span class="err">중</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="err">열람</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">where</span> <span class="n">author</span> <span class="o">=</span><span class="nv">"anjohh"</span><span class="p">;</span> <span class="o">#</span><span class="n">topic</span> <span class="err">중</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="err">중</span> <span class="n">author</span><span class="err">가</span> <span class="n">anjohh</span><span class="err">인것만</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">where</span> <span class="n">author</span> <span class="o">=</span><span class="nv">"anjohh"</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span> <span class="k">DESC</span><span class="p">;</span> <span class="o">#</span><span class="err">위의</span> <span class="err">것을</span> <span class="err">큰걸로</span> <span class="err">부터</span> <span class="err">정렬</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">author</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">where</span> <span class="n">author</span> <span class="o">=</span><span class="nv">"anjohh"</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span> <span class="k">DESC</span> <span class="k">LIMIT</span> <span class="mi">2</span><span class="p">;</span> <span class="o">#</span><span class="err">위에서</span> <span class="err">큰걸로</span> <span class="err">두개만</span> <span class="err">출력</span>
+</code></pre></div></div>
+
+<h2 id="데이터-수정update">데이터 수정(Update)</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">topic</span> <span class="k">SET</span> <span class="n">description</span><span class="o">=</span><span class="nv">"Oracle is ...."</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="nv">"Oracle"</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="데이터-삭제delete">데이터 삭제(Delete)</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="join">join</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">left</span> <span class="k">join</span> <span class="n">author</span><span class="p">;</span> <span class="o">#</span><span class="err">어떤</span> <span class="err">항목을</span> <span class="err">기준으로</span> <span class="k">join</span><span class="err">할지를</span> <span class="err">안정해줘서</span> <span class="err">오류</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">left</span> <span class="k">join</span> <span class="n">author</span> <span class="k">on</span> <span class="n">topic</span><span class="p">.</span><span class="n">author_id</span><span class="o">=</span><span class="n">author</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">description</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">profile</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">left</span> <span class="k">join</span> <span class="n">author</span> <span class="k">on</span> <span class="n">topic</span><span class="p">.</span><span class="n">author_id</span><span class="o">=</span><span class="n">author</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<span class="o">#</span><span class="n">author_id</span> <span class="err">와</span> <span class="n">author</span><span class="p">.</span><span class="n">id</span><span class="err">를</span> <span class="err">숨기기위하여</span> <span class="err">선택</span> <span class="err">출력을</span> <span class="err">하였으나</span> <span class="n">id</span><span class="err">항목이</span> <span class="err">두개여서</span> <span class="n">mysql</span><span class="err">이</span> <span class="err">인식</span> <span class="err">못함</span>
+<span class="k">select</span> <span class="n">topic</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">description</span><span class="p">,</span><span class="n">created</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">profile</span> <span class="k">from</span> <span class="n">topic</span> <span class="k">left</span> <span class="k">join</span> <span class="n">author</span> <span class="k">on</span> <span class="n">topic</span><span class="p">.</span><span class="n">author_id</span><span class="o">=</span><span class="n">author</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#data-base" class="page__taxonomy-item p-category" rel="tag">Data Base</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-10-11">October 11, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B9%8C%EB%A8%B9%EC%9D%84+%EB%95%8C%EC%AF%A4+%EC%B3%90%EB%8B%A4%EB%B3%B4%EB%8A%94+MySQL+%EA%B8%B0%EC%B4%88%20http%3A%2F%2Flocalhost%3A4000%2Fdata%2520base%2FDB%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdata%2520base%2FDB%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdata%2520base%2FDB%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/data%20base/data%20project/DB-project/" class="pagination--pager" title="DB 프로젝트 개요
+">이전</a>
+    
+    
+      <a href="/software%20engineering/SE-1/" class="pagination--pager" title="소프트웨어 공학 소개
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/4/" rel="permalink">wtm 프로젝트 여러 기능 결합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-10T00:00:00+09:00">May 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/3/" rel="permalink">wtm 프로젝트 kakao api
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/2/" rel="permalink">wtm 프로젝트 웹스크래핑
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/1/" rel="permalink">오밥무(wtm) 프로젝트 개요
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 An Jiho. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/data%20base/DB/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/data%20base/DB"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-an-jiohh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

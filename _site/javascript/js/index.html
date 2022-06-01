@@ -1,0 +1,789 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바스크립트 기본문법 아직 정하지 않은 이름 아직 정하지 않은 이름</title>
+<meta name="description" content="JavaScript grammar">
+
+
+  <meta name="author" content="An Jiho">
+  
+  <meta property="article:author" content="An Jiho">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="아직 정하지 않은 이름">
+<meta property="og:title" content="자바스크립트 기본문법">
+<meta property="og:url" content="http://localhost:4000/javascript/js/">
+
+
+  <meta property="og:description" content="JavaScript grammar">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-20T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-02-20T21:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/js/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "An Jiho",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="아직 정하지 않은 이름 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/author.png" alt="An Jiho" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">An Jiho</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="자바스크립트 기본문법">
+    <meta itemprop="description" content="JavaScript grammar">
+    <meta itemprop="datePublished" content="2022-02-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-02-20T21:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/javascript/js/" class="u-url" itemprop="url">자바스크립트 기본문법
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-20T00:00:00+09:00">February 20, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TOC</h4></header>
+              <ul class="toc__menu"><li><a href="#javascript와-만남">JavaScript와 만남</a><ul><li><a href="#script">script</a></li><li><a href="#이벤트">이벤트</a></li><li><a href="#콘솔">콘솔</a></li></ul></li><li><a href="#데이터-타입">데이터 타입</a><ul><li><a href="#정수형">정수형</a></li><li><a href="#문자열">문자열</a></li></ul></li><li><a href="#css-복습">CSS 복습</a><ul><li><a href="#style">style</a></li><li><a href="#선택자">선택자</a></li></ul></li><li><a href="#java-script를-이용하여-태그변경">java script를 이용하여 태그변경</a></li><li><a href="#문법">문법</a><ul><li><a href="#비교연산자">비교연산자</a></li><li><a href="#if">if</a></li><li><a href="#함수">함수</a></li><li><a href="#객체-쓰기와-읽기">객체 쓰기와 읽기</a></li><li><a href="#객체-키값-열람">객체 키값 열람</a></li><li><a href="#매소드-생성">매소드 생성</a></li><li><a href="#파일로-쪼개기">파일로 쪼개기</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>이 글은 생활코딩 JavaScript를 이용하여 기본 문법 정리한 문서입니다.</p>
+
+<h2 id="javascript와-만남">JavaScript와 만남</h2>
+
+<p>다음과 같은 방법으로 기존의 html과 javascript를 접목할 수 있다.</p>
+
+<h3 id="script">script</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span> <span class="c1">// 이 부분부터 js명령어 실행한다. document.write(1+1);&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="이벤트">이벤트</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span> <span class="nx">onclick</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">alert('hi')</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">onchange</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('changed')</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">onkeydown</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('key down!')</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>onclick 속성 값으로는 반드시 자바스크립트가 와야한다.<br />
+속성값은 웹브라우저가 기억하고 있다가 사용자가 클릭했을때 자바스크립트 문법에 따라 작용하게 된다.<br />
+웹브라우저가 어떠한 사건(이벤트)가 일어났을 때 작용되는 방식을 이벤트라고 한다.<br />
+이벤트를 이용해서 사용자와 상호작용하는 웹페이지를 만들 수 있다.</p>
+
+<h3 id="콘솔">콘솔</h3>
+
+<p>지금까지는 간단한 javascript를 실행시키기 위해 html파일을 제작하여 실행하였다.<br />
+하지만 웹브라우저의 콘솔을 이용하여 간단하게 실행시킬 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">asdfasdfasdfasdfsadfasdfasdfa</span><span class="dl">"</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="데이터-타입">데이터 타입</h2>
+
+<h3 id="정수형">정수형</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="문자열">문자열</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">asdf</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">sdkafjkasljfklasdf </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> sandfjasndf</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">o</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="css-복습">CSS 복습</h2>
+
+<h3 id="style">style</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-weight:bold;"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<h3 id="선택자">선택자</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>asdf<span class="nt">&lt;/div&gt;</span>
+// 줄바꿈이 되는 아무의미없는 태그 <span class="nt">&lt;span&gt;</span>asdf<span class="nt">&lt;/span&gt;</span> // 줄바꿈이 없는
+아무의미없는 태그
+
+<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-weight:bold;"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>위를 활용하여</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="o">//</span><span class="nt">여기서부터</span> <span class="nt">css문법</span>
+  <span class="nc">.js</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"js"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="o">//</span><span class="nt">여기서부터</span> <span class="nt">css문법</span>
+  <span class="nc">.js</span> <span class="p">{</span>
+    <span class="err">//class</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#first</span> <span class="p">{</span>
+    <span class="err">//id</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"first"</span> <span class="na">class=</span><span class="s">"js"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>클래스라는 말은 그룹핑, id는 한가지 값을 식별한다는 뜻<br />
+즉 클래스라는 속성은 그룹핑하고싶은 값을 그룹핑<br />
+id는 한번 사용할 경우 사용하면 안됨(작동하긴하나 규약위반)
+기본적으로 크게 클래스로 지정하고 타겟팅하여 id로 세부조작한다.</p>
+
+<p>그리하여 우선적으로 id &gt; class &gt; tag 순으로 작동된다.</p>
+
+<h2 id="java-script를-이용하여-태그변경">java script를 이용하여 태그변경</h2>
+
+<p>querySelector를 이용하여 다음과 같이 body 태그의 style 속성을 사용자가 클릭이벤트를 실행할 시 바꿀 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">night</span><span class="dl">"</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  </span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="문법">문법</h2>
+
+<h3 id="비교연산자">비교연산자</h3>
+
+<ul>
+  <li>=== : 동등</li>
+  <li>&lt;</li>
+  <li>
+    <blockquote>
+
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">doucument</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//true</span>
+</code></pre></div></div>
+
+<h3 id="if">if</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">doucument</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="함수">함수</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">nightDayHandler</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">nightDayHandler</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>self, this에 대해 추가적인 공부가 필요하다.</p>
+
+<h3 id="객체-쓰기와-읽기">객체 쓰기와 읽기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">coworkers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//객체 생성</span>
+  <span class="na">programmer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">egoing</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">designer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">leezche</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">programmer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">programmer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">designer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">designer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">coworkers</span><span class="p">.</span><span class="nx">bookkeeper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">duru</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 쓰기</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">bookkeeper : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">bookkeeper</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">taeho</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 쓰기(띄어쓰기가 있을때 사용)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">data scientist : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="객체-키값-열람">객체 키값 열람</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">coworkers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">coworkers</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="매소드-생성">매소드 생성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">coworkers</span><span class="p">.</span><span class="nx">showAll</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="파일로-쪼개기">파일로 쪼개기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">colors.js</span><span class="dl">"</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>위의 코드를 이용하여 script 정보를 파일로 쪼갤 수 있다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-20">February 20, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fjs%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/1/" class="pagination--pager" title="nft
+">이전</a>
+    
+    
+      <a href="/project/1/" class="pagination--pager" title="오밥무(wtm) 프로젝트 개요
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/4/" rel="permalink">wtm 프로젝트 여러 기능 결합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-10T00:00:00+09:00">May 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/3/" rel="permalink">wtm 프로젝트 kakao api
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/2/" rel="permalink">wtm 프로젝트 웹스크래핑
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/1/" rel="permalink">오밥무(wtm) 프로젝트 개요
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 An Jiho. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/javascript/js/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/javascript/js"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-an-jiohh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

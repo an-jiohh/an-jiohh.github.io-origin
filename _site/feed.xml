@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-30T21:50:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">아직 정하지 않은 이름</title><subtitle>An amazing website.</subtitle><author><name>An Jiho</name></author><entry><title type="html">wtm 프로젝트 여러 기능 결합</title><link href="http://localhost:4000/project/4/" rel="alternate" type="text/html" title="wtm 프로젝트 여러 기능 결합" /><published>2022-05-10T00:00:00+09:00</published><updated>2022-05-10T21:00:00+09:00</updated><id>http://localhost:4000/project/4</id><content type="html" xml:base="http://localhost:4000/project/4/"><![CDATA[<p>이번 목표는 <strong>스크래핑과 메시지 전송 기능을 결합하는 것</strong> 이다.</p>
+
+<h2 id="프로젝트-재확인">프로젝트 재확인</h2>]]></content><author><name>An Jiho</name></author><category term="project" /><summary type="html"><![CDATA[프로젝트]]></summary></entry><entry><title type="html">wtm 프로젝트 웹스크래핑</title><link href="http://localhost:4000/project/2/" rel="alternate" type="text/html" title="wtm 프로젝트 웹스크래핑" /><published>2022-05-02T00:00:00+09:00</published><updated>2022-05-02T21:00:00+09:00</updated><id>http://localhost:4000/project/2</id><content type="html" xml:base="http://localhost:4000/project/2/"><![CDATA[<h2 id="식단표-페이지-분석">식단표 페이지 분석</h2>
+<p>학교의 식단표 페이지에는 일주일간의 식단이 표로 식단을 표기하였고 표의 오른쪽 위에 날짜를 선택할 수 있어 선택한 날짜에 해당하는 주에 대한 식단표가 나오는 방식이다.
+처음 보았을 때 크게 대강 두 부분으로 나누어 어떻게 할지 고민해보기로 하였다.</p>
+<h3 id="날짜를-선택하는-부분">날짜를 선택하는 부분</h3>
+<p>표의 오른쪽 위에 날짜를 선택할 수 있어 선택값에 따라 get방식을 이용하여 sdate=20220509와 같은 날짜를 요청하여 받아오는 방식으로 작동한다.<br />
+해당 부분을 수정해야하나 싶었지만 sdata를 주소에 명시하지 않아도 자동으로 이번주에 해당하는 식단표가 나오는 것을 확인하여 큰 문제없이 원래의 주소를 사용함으로써 해결할 수 있었다.</p>
+<h3 id="식단표-구성">식단표 구성</h3>
+<p>식단표는 표로 구성되어 있고 표 속의 행이 아침, 점심, 저녁으로 열이 날짜로 구분된 표로 구성되어 있다.<br />
+간단하게 table태그를 스크래핑하여 가공하면 일주일간의 식단내용을 가져올 수 있다고 생각하였다.</p>
+
+<h2 id="구현">구현</h2>
+<p>python의 requests, BeautifulSoup를 이용하여 구현하였다.<br />
+http요청을 보내기 위해 requests, 해당 소스에서 원하는 내용을 추출하기위해 BeautifulSoup를 사용하였다.</p>
+
+<p>해당 내용을 스크래핑하기위해 해당 소스를 보았는데 페이지는 식당운영시간, 식단표 두개의 표로 구성되어 있고 두 표 모두 같은 ctable 클래스로 되어있어 어떻게 해당 태그의 내용을 가져올지 많은 고민을 하였다. 같은 태그에 같은 클래스로 구성되어 쉽게 BeautifulSoup로 바로 구분하기 어려웠다. 따라서 간단하게 table태그를 find_all로 모두 가져와 두번째(리스트)의 표를 지정하여 가져오는 방법을 사용하였다.</p>
+
+<p>이후 테이블 내의 td태그 사이 내용들을 모두 가져온 후 해당내용을 아침, 점심, 저녁으로 구분하고 또 메뉴별로 구분하여 리스트로 정리하였다.</p>
+
+<h2 id="코드">코드</h2>
+<script src="https://gist.github.com/an-jiohh/3683f0567a1490bf47b7d59596710936.js"></script>]]></content><author><name>An Jiho</name></author><category term="project" /><summary type="html"><![CDATA[프로젝트]]></summary></entry><entry><title type="html">오밥무(wtm) 프로젝트 개요</title><link href="http://localhost:4000/project/1/" rel="alternate" type="text/html" title="오밥무(wtm) 프로젝트 개요" /><published>2022-05-02T00:00:00+09:00</published><updated>2022-05-02T21:00:00+09:00</updated><id>http://localhost:4000/project/1</id><content type="html" xml:base="http://localhost:4000/project/1/"><![CDATA[<p>간단한 프로젝트를 시작하며 아이디어 정리 및 필요한 요소들을 이 페이지에서 정리하고자 한다.<br />
+아이디어만 생각해놨지 어떠한 방식을 이용하여 구현할 것인지 구현하는 과정에서 어떠한 기술이 필요한지는 정하지 못한상황이다.<br />
+사실 아는것이 너무 부족하여 구현간에 필요한 기술 모두를 새로 배워야 한다고 생각한다.<br />
+이번 기회로 어떤 것을 내가 하고싶은것에 대해 더욱 알아가는 과정이 되었으면 좋겠다.</p>
+
+<h2 id="프로젝트-이름에-대해">프로젝트 이름에 대해</h2>
+<p>동기들에게 어떤 학식이 나오는지 물어볼때 “오늘 밥 무엇?”으로 물어보다보니 프로젝트이름을 오늘 밥 무엇을 줄여 오밥무로 짓게되었다.</p>
+
+<h2 id="아이디어">아이디어</h2>
+<p>우리는 인사로 ‘밥 먹었어?’라고 물어보거나 오랜만에 만난 사람을 보며 ‘언젠가는 밥먹자’라는 말을 하고는 한다. 한국인이라면 밥심으로 돌아간다는 말이 나올만 하다고 생각한다. 그정도로 밥에 대한 관심이 많다고 생각하는데 본론으로 학창시절에 ‘오늘 점심머야’라는 말을 많이 들은적이 있다. 대학에 진학하여 이러한 말을 또 들을 것이라고 생각하지 못했으나 기숙사 급식을 많이 이용하여 해당하는 경우가 많이 발생한다. 이때마다 아침,점심,저녁 정해진 시간마다 카톡으로 오늘의 급식이 무엇인지 알려주면 편하지 않을까 라는 생각이들어 구현해 보고자 한다. 또한 가끔 기숙사 급식을 보며 오늘은 맛이 없는 것이 나왔으니 밖에 나가서 먹자는 의견이 나올 경우도 존재하므로 사용하기 편하지 않을까 싶다.</p>
+
+<h2 id="현재-문제점-파악">현재 문제점 파악</h2>
+<p>누군가는 현재 존재하는 통합정보시스템에서 기숙사 메뉴를 직접찾아보면 되지않냐고 의문을 제기할 수도 있다. 하지만 이를 구현하고자하는 가장 큰 문제점이 있다.<br />
+  이는 통합정보시스템의 반응속도이다. 생활관 식단표를 키는데 통합정보시스템 -&gt; 학생생활관 -&gt; 생활관식단표 메뉴를 거처야 할 뿐만아니라 경우에 따라 로딩하는데 오랜시간이 걸리는 상황 또는 아예 식단표가 켜지지않는 상황이 존재한다. 이때 너무 안켜져서 그냥 어차피 먹어야하는데 가서 직접보자고 한 경우도 있을 정도있다.<br />
+  또한 위에 경우와 같이 밖에서 기숙사 급식을 미리알게되 선호하지 않는 급식이 나왔을 경우 바로 옆에 있는 친구를 붙잡고 밖에 나가서 먹을 수 있는 상황도 충분히 일어날 수 있다고 생각한다.</p>
+
+<h2 id="대략적인-구현">대략적인 구현</h2>
+<p>대략적으로 다음과 같은 방법으로 구현하고자 하나 앞서 기술한데로 내가 생각한 방안이 구현못하는 경우, 효율적이지 못한 경우 다른 방법을 사용할것이다.</p>
+<ol>
+  <li>학생생활관 주간 식단표를 웹스크리핑하여 서버에 저장(주에 한번씩)
+  <a href="https://www.kunsan.ac.kr/dormi/index.kunsan?contentsSid=327">학생생활관 메인 홈페이지</a>.</li>
+  <li>카카오톡 API를 사용하여 정해진 시간에 스크리핑 내용을 전송하는 프로그램 구현</li>
+  <li>AWS를 이용하여 서버운영
+  굉장이 간단한 로직이라고 생각된다. 하지만 웹스크리핑을 제외한 카카오톡 API, AWS는 겉핧기 수준이여서 배우는데 많은 시간이 소요될 것이라고 생각된다.</li>
+</ol>
+
+<h2 id="앞으로의-계획">앞으로의 계획</h2>
+<p>구현하며 여러 내용은 노션을 통하여 정리하는 한편 
+  이 앞으로 페이지에는 구현을 하며 얼마나 목표를 달성하였는지 또 목표 달성간에 어떠한 어려움이 발생하였고 어떻게 해결하였는지를 쓰려고 한다.</p>]]></content><author><name>An Jiho</name></author><category term="project" /><summary type="html"><![CDATA[프로젝트]]></summary></entry><entry><title type="html">wtm 프로젝트 kakao api</title><link href="http://localhost:4000/project/3/" rel="alternate" type="text/html" title="wtm 프로젝트 kakao api" /><published>2022-05-02T00:00:00+09:00</published><updated>2022-05-16T21:00:00+09:00</updated><id>http://localhost:4000/project/3</id><content type="html" xml:base="http://localhost:4000/project/3/"><![CDATA[<p>스크래핑에 이어서 다음 목표는 <strong>카카오톡 API를 사용하여 정해진 시간에 스크리핑 내용을 전송하는 프로그램 구현</strong> 이다.</p>
+
+<h2 id="카카오톡-api관련-실습">카카오톡 api관련 실습</h2>
+<p>구현에 초점을 맞추기전에 어떻게 사용하는지에 대해서 알아보고자 했다.<br />
+카카오 API 사용에 대해서 다음에 블로그를 참고하였다.</p>
+
+<p><a href="https://blog.daum.net/geoscience/1624">GGRS: Geoscience, GIS, &amp; Remote Sensing - 카카오 API를 이용하여 나에게 메시지 보내기</a>.<br />
+<a href="https://blog.daum.net/geoscience/1636">GGRS: Geoscience, GIS, &amp; Remote Sensing - 카카오톡 메시지 API를 이용하여 친구에게 메시지 보내기</a>.</p>
+
+<p>위의 실습과 kakao developers의 공식문서를 참고하여 구현하고자할때 다음과 같이 구분할 수 있지 않을까 생각하였다.</p>
+<ol>
+  <li>서비스 이용을 위한 로그인 과정</li>
+  <li>API를 이용한 메시지 전송 과정</li>
+</ol>
+
+<p>특히 메시지 전송 구현에 관하여 카카오링크 API, 카카오톡메시지 API 두가지 방법이 존재하는데 차이점으로 카카오톡메시지 API에만 REST API를 지원한다. 기존에 파이썬을 이용하여 스크래핑하였기 때문에 스크래핑한 결과를 파이썬의 자료형으로 바로 사용하기 용이하므로 REST API를 지원하는 카카오톡메시지 API를 이용하여 구현하고자 하였다.</p>
+
+<h2 id="로그인-구현">로그인 구현</h2>
+<p>다음은 REST API의 로그인이 작동하는 시퀸스 다이어그램이다.<br />
+<img src="https://developers.kakao.com/docs/latest/ko/assets/style/images/kakaologin/kakaologin_sequence.png" alt="로그인 시퀸스 다이어그램" width="70%" height="70%" /></p>
+
+<h3 id="step1-인가코드-받기">step1 인가코드 받기</h3>
+<p>시퀸스 다이어그램 step1를 살펴보면 인가코드를 받는 과정이 존재한다. 이때 get방식으로 인가코드를 받게되며 서비스 서버를 이용하여 인가코드를 받게되는데
+구현간 코드값을 직접 받아올 수 있는 웹서버를 구동하기에는 현재 상황상 어려울 뿐만아니라 로그인 구현만을 위해 웹서버를 구동하기에는 너무 큰 기회비용이 든다고 생각하였다.</p>
+
+<p>따라서 실습 블로그에 나와있던 방식으로 URl에 나와있는(get방식)의 인가코드를 직접 가져와서 토큰을 가져오기 위해 활용하였다.</p>
+
+<h3 id="step2-토큰-받기">step2 토큰 받기</h3>
+<p>토큰을 받는 과정은 두개의 코드로 구분하여 구현하였다.</p>
+
+<ol>
+  <li>step1의 인가코드를 이용하여 refresh토큰을 발급받는 get_refresh_token.py를 구현하였고</li>
+  <li>필요시마다 생명주기가 짧은 access토큰을 발급받기 위해 get_access_token.py를 구현하였다.</li>
+</ol>
+
+<p>get_refresh_token.py은 인가코드를 이용하여 refresh토큰을 post형식으로 받는 간단한 코드이다.</p>
+
+<p>get_access_token.py에 refresh토큰 정보를 저장하여 access토큰이 필요할때 해당 코드만 실행시키면 access토큰을 발급 받을 수 있도록 구현하였으며 코드실행의 결과물인 access토큰을 json파일로 저장함으로써 모듈화 하였다.</p>
+
+<p>step2 토큰 받기를 구현하며 첫번째로 Json이 무엇인지 또 어떻게 사용하는지에 대해 어려웠던거같다.<br />
+Json란 무엇인가 정도만 알고있어서 좀 더 Json에 알아가고 어떻게 사용하는지를 배우는 과정에서 많은 시간을 사용했다.</p>
+
+<p>또한 Json 토큰을 코드랑 같은 폴더에 저장하였는데 Json을 어떻게 저장해야하는지에 고민을 해보았다.<br />
+관련하여 여러 방법을 찾아보고 의문점을 많이가지고 여러 자료를 찾아보았지만 해결점을 찾을 수 없었다. 
+지금도 이러한 방식으로 Json을 저장하였을때의 보안상 문제점이 무엇인지 의문이다.
+여러 생각을 해보았는데 DB가 크게 필요없어 DB를 사용하지 않지만 대부분의 서비스는 DB를 사용하며 DB를 사용할 경우 DB에 토큰정보를 그대로 넣으면 되기 때문에 관련하여 정보가 없는 것 같다는 생각이 들었다.</p>
+
+<p>현재 유저가 한명이기 때문에 Json파일도 하나일 뿐만아니라 카카오톡 권한조치로 인하여 보안상문제가 크게 발생하지 않겠다라는 생각이 들어 그대로 구현하였다.</p>
+
+<p>추가적으로 토큰에 대해 알아가는 과정에서 많은 시간을 사용하였다. 저번에 DB관련 프로젝트를 하며 로그인을 구현한적이 있었는데 그때는 세션을 통하여 구현하였기 때문에 토큰에 대해 생소한 상태였다. 토큰을 사용하면서 access토큰말고도 refresh토큰도 사용하는지에 대한 궁금증이 있었는데</p>
+
+<p>아래의 글을 통하여 대략적으로 보안상의 취약점을 제거하기 위해 즉</p>
+
+<p><a href="https://tecoble.techcourse.co.kr/post/2021-10-20-refresh-token/">Tecoble - refresh token 도입기</a>.</p>
+<blockquote>
+  <p>access token + refresh token의 조합을 구성하면 access token의 경제적인 장점과 refresh token의 보안적인 장점을 둘 다 챙길 수 있다.</p>
+</blockquote>
+
+<p>을 달성하기 위해 쓰인 다는 것을 알게 되었다. 현재 구현시 아침,점심,저녁때에만 토큰이 필요하므로 위의 장점에 대해 더욱 효과적이라고 생각이 들었으며 “refresh token을 이용하여 메시지를 보낼 때 access token을 받는다”라는 대략적인 구조도 생각하게 되었다.</p>
+
+<h2 id="메시지-전송">메시지 전송</h2>
+
+<p><img src="https://developers.kakao.com/docs/latest/ko/assets/style/images/message/message_talk.png" alt="카카오톡 메시지 시퀸스 다이어그램" width="80%" height="80%" /></p>
+
+<p>메시지 전송에 관한 kakao developers에서 제공하는 시퀸스 다이어그램이다. 위의 과정을 두개로 나누어 구현하고자 했다.</p>
+
+<ol>
+  <li>카카오톡 친구 데이터 가져오기</li>
+  <li>카카오톡 메시지 보내기(메시지 API호출)</li>
+</ol>
+
+<h3 id="step1-카카오톡-친구-데이터-가져오기">step1 카카오톡 친구 데이터 가져오기</h3>
+
+<p>친구 가져오기는 get_friends_list.py 코드로 구현하였고 간단히 토큰을 이용하여 카카오서버에 친구목록을 요청하는 방식이다. 기능을 함수화하여 다음단계인 메시지 보내기 단계에서 사용할 수 있도록하였다. <br />
+앞서 실습 및 JWT에 대해 알아보았기 때문에 쉽게 구현할 수 있었다.</p>
+
+<h3 id="step2-카카오톡-메시지-보내기메시지-api호출">step2 카카오톡 메시지 보내기(메시지 API호출)</h3>
+
+<p>메시지 보내기는 send_menu.py 코드로 구현하였고 위와같이 간단하게 JWT를 가져오고 위의 친구 가져오는 함수로 친구목록을 가져온 후 친구목록과 메시지를 Json형식으로 만든다음 카카오톡 메시지 API로 요청하는 형태로 구현하였다.</p>
+
+<p>쉽게 구현 할 수 있다고 생각하였는데 Json 형식에 맞추다보니 생각보다 시간도 많이 걸리고 어려움이 많았던거 같다.<br />
+특히 파이썬 자료형을 Json형태로 변경하는 것에 오랜시간이 걸렸는데 알면서 해결한 느낌이 아니라 어찌 이것저것해보다 보니 성공한 느낌이다.<br />
+익숙치 않다보니 시간이 많이 걸리는 것은 당연한것이 맞다고 생각하면서도 막상 결과물을 보다보니 그렇게 오래걸릴일도 아니였던거 같다는 생각이 들었다.<br />
+다른곳에서 Json을 사용하게되면 더욱 빠르게, 효율적으로 사용하기 위해 다시 추가적인 공부가 필요하겠다라는 생각이 들었다.</p>
+
+<h2 id="이후">이후</h2>
+<p>위의 과정을 통하여 어느정도 카카오톡 메시지를 보낼 수 있는 여건을 마련해 놓았다. 생각해보면 보내는 여건만이 아니라 원하는 기능을 구현하기 위해 더 조금더 생각하면서 구현하였기 때문에 보다 많은 발전이 있었다고 생각된다.</p>
+
+<p>앞으로 구현한 두개의 기능 웹스크래핑과 메시지 전송을 결합하면 마무리 될 것으로 보인다.</p>
+
+<p>특이 이번 과정이 새로운 기술들이 많았기 때문에 얻은 것도 많다고 생각하며 추가적으로 아는것이 많으면 시야가 다르다 라는 말에 대해 직접 격어본 경험인거같다.<br />
+어디서 한번 듣거나 조금이라도 써본 기술들이 구현간에 시작점을 찾는데 큰 도움이 된 것같고 또 처음 시도하는 것에 대해서는 어떻게 시작할지 오랜시간을 소모하였다.<br />
+이번에 배운것들이 아쉬운 부분들도 있겠지만 다른 것들을 시도할때 추가적인 도움이 되지않을까 싶다.</p>]]></content><author><name>An Jiho</name></author><category term="project" /><summary type="html"><![CDATA[프로젝트]]></summary></entry><entry><title type="html">자바스크립트 기본문법</title><link href="http://localhost:4000/javascript/js/" rel="alternate" type="text/html" title="자바스크립트 기본문법" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T21:00:00+09:00</updated><id>http://localhost:4000/javascript/js</id><content type="html" xml:base="http://localhost:4000/javascript/js/"><![CDATA[<p>이 글은 생활코딩 JavaScript를 이용하여 기본 문법 정리한 문서입니다.</p>
+
+<h2 id="javascript와-만남">JavaScript와 만남</h2>
+
+<p>다음과 같은 방법으로 기존의 html과 javascript를 접목할 수 있다.</p>
+
+<h3 id="script">script</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span> <span class="c1">// 이 부분부터 js명령어 실행한다. document.write(1+1);&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="이벤트">이벤트</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span> <span class="nx">onclick</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">alert('hi')</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">onchange</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('changed')</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">onkeydown</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('key down!')</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>onclick 속성 값으로는 반드시 자바스크립트가 와야한다.<br />
+속성값은 웹브라우저가 기억하고 있다가 사용자가 클릭했을때 자바스크립트 문법에 따라 작용하게 된다.<br />
+웹브라우저가 어떠한 사건(이벤트)가 일어났을 때 작용되는 방식을 이벤트라고 한다.<br />
+이벤트를 이용해서 사용자와 상호작용하는 웹페이지를 만들 수 있다.</p>
+
+<h3 id="콘솔">콘솔</h3>
+
+<p>지금까지는 간단한 javascript를 실행시키기 위해 html파일을 제작하여 실행하였다.<br />
+하지만 웹브라우저의 콘솔을 이용하여 간단하게 실행시킬 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">asdfasdfasdfasdfsadfasdfasdfa</span><span class="dl">"</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="데이터-타입">데이터 타입</h2>
+
+<h3 id="정수형">정수형</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="문자열">문자열</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">asdf</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">sdkafjkasljfklasdf </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> sandfjasndf</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">o</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="css-복습">CSS 복습</h2>
+
+<h3 id="style">style</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-weight:bold;"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<h3 id="선택자">선택자</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>asdf<span class="nt">&lt;/div&gt;</span>
+// 줄바꿈이 되는 아무의미없는 태그 <span class="nt">&lt;span&gt;</span>asdf<span class="nt">&lt;/span&gt;</span> // 줄바꿈이 없는
+아무의미없는 태그
+
+<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-weight:bold;"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>위를 활용하여</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="o">//</span><span class="nt">여기서부터</span> <span class="nt">css문법</span>
+  <span class="nc">.js</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"js"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="o">//</span><span class="nt">여기서부터</span> <span class="nt">css문법</span>
+  <span class="nc">.js</span> <span class="p">{</span>
+    <span class="err">//class</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#first</span> <span class="p">{</span>
+    <span class="err">//id</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"first"</span> <span class="na">class=</span><span class="s">"js"</span><span class="nt">&gt;</span>asdf<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>클래스라는 말은 그룹핑, id는 한가지 값을 식별한다는 뜻<br />
+즉 클래스라는 속성은 그룹핑하고싶은 값을 그룹핑<br />
+id는 한번 사용할 경우 사용하면 안됨(작동하긴하나 규약위반)
+기본적으로 크게 클래스로 지정하고 타겟팅하여 id로 세부조작한다.</p>
+
+<p>그리하여 우선적으로 id &gt; class &gt; tag 순으로 작동된다.</p>
+
+<h2 id="java-script를-이용하여-태그변경">java script를 이용하여 태그변경</h2>
+
+<p>querySelector를 이용하여 다음과 같이 body 태그의 style 속성을 사용자가 클릭이벤트를 실행할 시 바꿀 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">night</span><span class="dl">"</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  </span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="문법">문법</h2>
+
+<h3 id="비교연산자">비교연산자</h3>
+
+<ul>
+  <li>=== : 동등</li>
+  <li>&lt;</li>
+  <li>
+    <blockquote>
+
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">doucument</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//true</span>
+</code></pre></div></div>
+
+<h3 id="if">if</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">doucument</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="함수">함수</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">nightDayHandler</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">nightDayHandler</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>self, this에 대해 추가적인 공부가 필요하다.</p>
+
+<h3 id="객체-쓰기와-읽기">객체 쓰기와 읽기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">coworkers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//객체 생성</span>
+  <span class="na">programmer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">egoing</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">designer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">leezche</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">programmer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">programmer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">designer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">designer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">coworkers</span><span class="p">.</span><span class="nx">bookkeeper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">duru</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 쓰기</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">bookkeeper : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">bookkeeper</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">taeho</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 쓰기(띄어쓰기가 있을때 사용)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">data scientist : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="객체-키값-열람">객체 키값 열람</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">coworkers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">coworkers</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="매소드-생성">매소드 생성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">coworkers</span><span class="p">.</span><span class="nx">showAll</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="파일로-쪼개기">파일로 쪼개기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">colors.js</span><span class="dl">"</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>위의 코드를 이용하여 script 정보를 파일로 쪼갤 수 있다.</p>]]></content><author><name>An Jiho</name></author><category term="JavaScript" /><summary type="html"><![CDATA[JavaScript grammar]]></summary></entry><entry><title type="html">nft</title><link href="http://localhost:4000/discrete%20mathematics/1/" rel="alternate" type="text/html" title="nft" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T23:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/1</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/1/"><![CDATA[<h2 id="nft란">NFT란?</h2>
+
+<p>FT(Fungible Token) 대체가능한 토큰
+예) 비트코인</p>
+
+<p>NFT(Non) 대체불가능한 토큰</p>
+
+<p>특별한이유</p>
+
+<p>누구것인지 블록체인 위의 스마트컨트렉에 기록이되며
+누구나 볼 수 있으며 위조가 불가능</p>
+
+<p>일반적으로 기본 뼈대에 여러조합을 바꿔가며 만들어간다</p>
+
+<h3 id="nft-제작흐름">nft 제작흐름</h3>
+<p>대량으로 nft를 만들때에는</p>
+<ol>
+  <li>여러 파트를 제작하고</li>
+  <li>파트들을 조합하고</li>
+  <li>민팅을 진행
+민팅 : nft를</li>
+</ol>]]></content><author><name>An Jiho</name></author><category term="Discrete mathematics" /><summary type="html"><![CDATA[etc]]></summary></entry><entry><title type="html">논리 및 증명</title><link href="http://localhost:4000/discrete%20mathematics/3/" rel="alternate" type="text/html" title="논리 및 증명" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/3</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/3/"><![CDATA[<p>논리는 현실세계를 수학적으로 모델링 할 때 사용한다.</p>
+
+<h2 id="명제">명제</h2>
+<p>현실세계를 간략하고 정확하게 판별하도록 표현한 문장이나 수식
+주관적이 아닌, 있다/없다 등 참과 거짓을 결정할 수 있는 문장이 명제가 될 수 있다.</p>
+
+<h3 id="진리값">진리값</h3>
+<p>참(T), 거짓을 가리키는 값</p>
+
+<h2 id="논리연산자와-합성명제">논리연산자와 합성명제</h2>
+<p>여러 명제를 결합(논리연산자 사용)하여 → 새로운 명제
+즉 여러 명제가 논리 연산자에 의해 결합된 명제를 합성명제라고 한다.  <br />
+각 명제의 진리값에 따른 결과를 보여주는 표를 진리표라고함</p>
+
+<ul>
+  <li>합성명제 예시
+~(p^q)⊕(~pvq)에 대하 ㄴ진리표를 작성하라.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>p</th>
+      <th>q</th>
+      <th>~p</th>
+      <th>p^q</th>
+      <th>~(p^q)</th>
+      <th>(~pvq)</th>
+      <th>전체</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="부정p--ㄱp">부정(~p ~ ㄱp)</h3>
+<p>P의 진리값과 반대의 긴릿값을 갖는 명제</p>
+
+<h3 id="논리곱pq">논리곱(p^q)</h3>
+<p>p and q 두개가 모두 참일 때 참</p>
+
+<h3 id="논리합pvq">논리합(pvq)</h3>
+<p>p or q 둘중하나가 참일 때 참</p>
+
+<h3 id="베타적-논리합pq">베타적 논리합(p⊕q)</h3>
+<p>p q 중 하나만 참일 때 참, 그렇지 않을 때 거짓</p>
+
+<h3 id="진리값에-따른-합성명제-구분">진리값에 따른 합성명제 구분</h3>
+<ul>
+  <li>항진명제 : 항상 T</li>
+  <li>모순명제 : 항상 F</li>
+  <li>사건명제 : 항진,모순 명제가 아닌 것</li>
+</ul>
+
+<h2 id="조건명제">조건명제</h2>
+<p>가정 또는 전제가 되는 명제가 존재하고 이를 바탕으로 결론 또는 결과가 되는 명제
+p → q</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">p</th>
+      <th style="text-align: center">q</th>
+      <th style="text-align: center">p→q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="쌍방조건-명제">쌍방조건 명제</h3>
+<p>p,q가 가정이면서 동시에 결론인 명제</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">p</th>
+      <th style="text-align: center">q</th>
+      <th style="text-align: center">p↔q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="논리적-동치">논리적 동치</h2>
+<p>합성명제 p와 q의 진리값이 서로 같을 경우</p>
+<ol>
+  <li>진리표 활용</li>
+  <li>논리적 동치법칙으로 정리 후 비교</li>
+</ol>
+
+<h3 id="논리적-동치-법칙">논리적 동치 법칙</h3>
+<p>여러 합성명제들을 모아 동치법칙으로 정리 한 것으로 많은 종류가 있으나 일반 법칙과 다른 4가지가 있다.</p>
+<ol>
+  <li>분배법칙 : 더하기도 분배가 된다.</li>
+  <li>드모르간 법칙 : ~(p^q) = ~p v ~q / ~(pvq) = ~p ^ ~q</li>
+  <li>흡수법칙 : p ^ (pvq) = p / p v (p^q) = p</li>
+  <li>함축법칙 : p→q = ~p v q
+이외 많은 법칙이 있으니 찾아보기 바란다.</li>
+</ol>
+
+<h2 id="변수를-포함하는-명제">변수를 포함하는 명제</h2>
+<h3 id="명제함수">명제함수</h3>
+<p>논리 영역이 주어진 변수 x를 포함하여 진리값을 판별 할 수 있는 문장이나수식
+명제함수에 포함된 변수 x의 범위나 값을 논의영역이라고한다.</p>
+
+<p>논의 영역이 범위로 주어질 경우 전체한정자 또는 전칭한정자가 사용된다.<br />
+전체한정자는 모든 원소에 대해 참이어야 명제함수도 참이되며<br />
+존재한정자는 원소 중 하나만 참이어도 명제함수가 참이 된다.</p>
+
+<h2 id="추론">추론</h2>
+<p>참인 명제를 근거로 다른 명제가 참(T)임을 유도하는 방식이다.<br />
+여기서 참인 명제를 가정
+주어진 전제에 의해 유도된 명제를 결론이라고 한다.</p>
+
+<h2 id="증명">증명</h2>
+<ul>
+  <li>공리 : 별도의 증명없이 항상 참으로 이용되는 명제</li>
+  <li>정의 : 대상을 보편화하기 위해 사용되는 용어 또는 기호의 의미를 확실하게 규정하는 문장이나 식</li>
+  <li>정리 : 공리와 정의를 통해 참(T)으로 확인된 명제</li>
+</ul>
+
+<h3 id="직접-증명법">직접 증명법</h3>
+<p>p → q가 참을 증명하기 위해 전제 p를 참으로 가정했을 때 결론 q도 참임을 증명하는 방법이다.</p>
+
+<p>p : 두 정수 m, n은 홀수이다.<br />
+q : m, n의 곱은 홀수이다.<br />
+m = 2k + 1 / n = 2l + 1<br />
+m * n = (2k+1) * (2l+1) = 4kl+2k+2l+1 = 2(kl+k+l) + 1 이므로 2 * 정수 + 1과 같은 홀수 형태가 된다.</p>
+
+<h3 id="간접-증명법">간접 증명법</h3>
+<h4 id="대우-증명법">대우 증명법</h4>
+<p>p → q와 대우 ~q → ~p가 동치임을 이용하여 증명하는 방법</p>
+
+<p>m,n의 곱이 홀수이면 m,n은 모두 홀수임을 증명하라
+p : 두 정수 m,n의 곱이 홀수이다.
+q : 두 정수 m,n은 홀수이다.
+~q → ~p : 두 정수 m,n이 짝수이면 두 정수 m,n의 곱이 짝수이다.<br />
+m = 2k, n = 2l 이면 mn = 2k * 2l = 4kl = 2(2kl)이므로 짝수이며 대우가 참이니 명제도 참이다.</p>
+
+<h4 id="모순증명법">모순증명법</h4>
+<p>p → q는 ~(p^~q)가 동치임을 이용하여 p^~q가 거짓임을 보여 증명하는 방법</p>
+
+<h3 id="수학적-귀납법">수학적 귀납법</h3>
+<p>0과 자연수에 대해 일정한 규칙을 나타내는 명제 P(n)이 성립하는 것을 증명하는 방법<br />
+즉 첫번쨰 단계가 성립하고 n번째 단계가 성립할 때 n+1번째도 성립함을 보이는 방식의 증명 방법이다.</p>]]></content><author><name>An Jiho</name></author><category term="Discrete mathematics" /><summary type="html"><![CDATA[이산수학]]></summary></entry><entry><title type="html">수의 표현</title><link href="http://localhost:4000/discrete%20mathematics/2/" rel="alternate" type="text/html" title="수의 표현" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-08T21:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/2</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/2/"><![CDATA[<h2 id="수의-체계">수의 체계</h2>
+<p>자연수 &lt; 정수 &lt; 유리수 &lt; 무리수 &lt; 복소수</p>
+
+<h2 id="수의-연산">수의 연산</h2>
+<h3 id="나누기-연산">나누기 연산(|)</h3>
+<p>5 | 20 = 4
+dq = n</p>
+<h3 id="나머지-연산mod">나머지 연산(mod)</h3>
+<p>20 mod 5 = 0
+21 mod 5 = 1</p>
+
+<h3 id="나누기-연산의-정리">나누기 연산의 정리</h3>
+<p>d|m, d|n이면 d|(m+n)이다.(나누기 연산이 가능하다.=나머지가 없다.)
+d|m = k, d|n = l 이면 m=dk n=dl이다.<br />
+m+n = dk + dl m+n=d(k+l)이다 따라서 d|(m+n)이다.</p>
+
+<h2 id="수의-표현">수의 표현</h2>
+
+<p>2진수, 8진수, 16진수 여러 표현으로 수를 표현</p>
+
+<h3 id="진법간의-변환">진법간의 변환</h3>
+<p>10진수와, 2진수는 모든 변환가능, 하지만 8진수와 16진수는 서로 변환불가하다.<br />
+따라서 2진수나 10진수로 변환후 16진수 또는 8진수로 변환하여야한다.<br />
+변환방법은 다음과 같다.
+<img src="/assets/images/math1.jpg" alt="진법변환" /></p>
+
+<h3 id="컴퓨터에서의-수의-표현">컴퓨터에서의 수의 표현</h3>
+<p>컴퓨터는 데이터를 워드 단위로 처리하는데 워드의 맨 왼쪽으 비트를 부호를 판단하는데 사용된다.
+이때 0은 양수, 음수는 1로 나타네어 표현하게 된다. 컴퓨터에서는 다음과 같은 방법으로 음수양수를 구별한다.</p>
+
+<ul>
+  <li>부호화-절대값표현 : 위드의 데이터 비트를 데이터의 절댓값으로 표현</li>
+  <li>부호화-1의 보수</li>
+  <li>부호화-2의 보수</li>
+</ul>
+
+<p>이때 보수는 보충해주는 수를 의미하며 a에 대한 보수는 a와 수 합이 n이면 n의 보수라고 한다.(a + n의보수 = n)</p>
+
+<p>n진수에는 n의 보수와 n-1의 보수가 존재한다.
+즉 2진수를 사용하는 컴퓨터에서는 2의 보수와 1의 보수가 존재한다.</p>
+
+<p>부호비트가 양수일때 절대값표현, 1의 보수, 2의 보수의 값이 서로 같으며 음수일때 차이점을 가진다.</p>
+
+<ol>
+  <li>
+    <p>부호화-1의 보수 표현<br />
+음수에 대해 부호화-절대값표현에서 부호비트는 그대로 사용한다.<br />
+음수에 대한 부호화-절대값표현에서 비트는 0은 1로, 1은 0으로 바꿔서 표현한다.</p>
+  </li>
+  <li>
+    <p>부호화-2의 보수표현
+음수에 대해 부호화-절대값표현에서 부호비트는 그대로 사용한다.<br />
+음수에 대한 부호화-절대값표현에서 1의 보수에 1을 더한다.</p>
+  </li>
+</ol>
+
+<h3 id="진수에-따른-데이터-표현-범위">진수에 따른 데이터 표현 범위</h3>
+
+<ul>
+  <li>부호화-절대값표현 : -(2^(n-1)-1) ~ (2^(n-1)-1)</li>
+  <li>부호화-1의 보수 : -(2^(n-1)-1) ~ (2^(n-1)-1)</li>
+  <li>부호화-2의 보수 : -2^(n-1) ~ (2^(n-1)-1)</li>
+</ul>
+
+<p>부호화-2의 보수표현이 표현할수 있는 수가 하나 더 많다.<br />
+부호화 절대값표현은 1000, 0000 / 부호화-1의보수는 0000, 1111로 0을 표현할 수 있는 방법이 두가지기이기 때문에 표현할 수 있는 수가 하나적다.</p>
+
+<h3 id="보수-연산">보수 연산</h3>
+<p>1의 보수연산과 2의 보수연산은 다음그림으로 쉽게 사용할 수 있다.</p>
+
+<p><img src="/assets/images/math2.jpg" alt="보수연산" /></p>
+
+<p>1의 보수 연산은 더하였을 때 초과로 발생한 값을 다시 한번 더해준다.<br />
+2의 보수 연산은 초과로 발생한 값을 무시한다.<br />
+이후 비트부호가 양수이면 그대로, 음수이면 보수를 취하면 답이 나오게 된다.</p>]]></content><author><name>An Jiho</name></author><category term="Discrete mathematics" /><summary type="html"><![CDATA[이산수학]]></summary></entry><entry><title type="html">이산수학 개요</title><link href="http://localhost:4000/discrete%20mathematics/1/" rel="alternate" type="text/html" title="이산수학 개요" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-08T20:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/1</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/1/"><![CDATA[<p>본글은 편입을 준비하며 이산수학을 공부하였고 관련 내용을 간단하게 정리하였다.</p>
+
+<h2 id="이산수학이란">이산수학이란?</h2>
+<p>이산수학에서 이산이란 연속성이 전혀 없는 분리된 상태를 말한다.<br />
+즉, 이산수학은 정수와 같이 분리된 값에 대해 공부하며 분리된 값을 다룬다는 것은 컴퓨터의 특징과 관련이 깊다.<br />
+해당되는 내용에는 다음과 같다.</p>
+
+<ul>
+  <li>0,1로 이루어진 기게어 처리 -&gt; 사칙연산, 보수연산</li>
+  <li>문제 해결간 문제해결 방법이 가장 논리적인지 판단 -&gt; 명제, 논리, 증명</li>
+  <li>데이터 관리 -&gt; 집합</li>
+  <li>데이터를 분석, 연산, 처리 -&gt; 행렬</li>
+  <li>데이터 구성을 시각적으로 처리 -&gt; 그래프, 트리</li>
+  <li>회로설계 -&gt; 부울대수</li>
+  <li>문제가 발생할 확률 및 가능한 해결 방법의 수 -&gt; 확률</li>
+</ul>]]></content><author><name>An Jiho</name></author><category term="Discrete mathematics" /><summary type="html"><![CDATA[이산수학]]></summary></entry><entry><title type="html">트리</title><link href="http://localhost:4000/discrete%20mathematics/5/" rel="alternate" type="text/html" title="트리" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-09T02:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/5</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/5/"><![CDATA[<h2 id="트리-및-구성요소">트리 및 구성요소</h2>
+<p>루트라는 특별한 노드를 갖고 그래프를 구성하는 꼭짓점 간에 단순경로가 존재하는 비순환의 연결 그래프를 트리라고 한다.
+트리는 노드, 루트로 이루어져 있으며 부모노드, 자식노드, 형제노드, 리프노드, 중간노드, 조상노드, 자손노드, 서브트리, 차수, 레벨, 깊이, 포레스트 등으로 구분할 수 있다.</p>
+
+<h3 id="노드와-모서리에-대한-정리">노드와 모서리에 대한 정리</h3>
+<p>높 노드의 개수를 v, 모서리의 개수를 e라고 하면 e = v - 1 이다.</p>
+
+<h2 id="이진트리">이진트리</h2>
+<p>트리인 그래프의 차수가 최대 2인 트리를 이진트리라고 한다.</p>
+
+<h3 id="완전-이진-트리">완전 이진 트리</h3>
+<p>트리의 높이가 h일 때 h-1까지는 모든 노드가 채워져 있고, 레벨 h는 왼쪽부터 노드가 채워져 있는 트리이다.</p>
+
+<h3 id="포화-이진-트리">포화 이진 트리</h3>
+<p>트리의 높이가 h일 떄 h까지 모든 노드가 채워져있는 트리이다.</p>
+
+<h3 id="편향이진-트리">편향이진 트리</h3>
+<p>왼쪽이나 오른쪽 서브 트리만 가지는 트리이다.</p>
+
+<h3 id="이진트리의-노드-수-정리">이진트리의 노드 수 정리</h3>
+<ol>
+  <li>레벨 k에서 가질 수 있는 최대 노드 수 : 2^k개</li>
+  <li>높이가 m인 이진 트리가 가질 수 있는 최대 노드 수 : 2^(m+1) - 1개</li>
+  <li>높이가 m인 이진 트리가 가질 수 있는 최소 노드 수 : m + 1개</li>
+</ol>
+
+<h2 id="이진트리의-구현">이진트리의 구현</h2>
+<p>이진트리는배열과 연결리스트와 같은 자료구조 형태로 표현할 수도 있다.</p>
+
+<h3 id="배열로-구현한-이진트리">배열로 구현한 이진트리</h3>
+<ol>
+  <li>루트 노드의 인덱스는 1이다.</li>
+  <li>형제 노드 중 왼쪽 노드의 인덱스 순서가 오른쪽 노드보다 빠르다.<br />
+이 두가지를 전제로하여 배열로 이진트리를 구현할 수 있다.</li>
+</ol>
+
+<p>이진트리를 배열로 구현할 때 편향이진트리의 경우 각 노드에 인덱스에 해당한느 배열의 인덱스에 입력하기 때문에 배열에 빈자리가 발생하게 된다.<br />
+이때 메모리 공간의 낭비가 발생한다.<br />
+또, 트리 중간에 노드를 삽입하거나 삭제하는 경우 원래있던 노드를 이동시킨뒤 그자리에 새로운 노드를 삽입하는 과정을 거치는 데 이러한 과정이 매우 비효율적이며 이를 연결리스트로 구현함으로서 해결한다.</p>
+
+<h3 id="연결리스트로-구현한-이진트리">연결리스트로 구현한 이진트리</h3>
+<p>연결리스트 노드는 | 왼쪽 자식 노드 주소 | 데이터 | 오른쪽 자식 노드 주소 | 로 구성된다.</p>
+
+<p>부모 노드와 자식 노드가 포인터로 연결되며 메모리를 낭비하지 않고 구현 할 수 있으며 노드의 삽입과 삭제도 주소 영역만 변경하면 되므로 효율적으로 구성할 수 있다.</p>
+
+<h2 id="이진트리-순회">이진트리 순회</h2>
+<p>모든 노드의 데이터를 처리 할 수 있도록 한 번씩 방문하는 방법을 순회라고 한다.<br />
+순회에는 전위순회, 중위순회,후위순회로 구분하는데 공통적인 전제조건은 다음과 같다.</p>
+
+<ol>
+  <li>항상 루트 노드에서 시작한다.</li>
+  <li>노드의 데이터를 읽기 전에 노드가 존재하는지 먼저 탐색한다.</li>
+  <li>형제 노드 중 왼쪽 노드를 먼저 탐색한다.</li>
+</ol>
+
+<p>위 3개의 전제조건을 바탕으로 어떤 노드를 먼저 탐색하는지에 따라 구분된다.</p>
+
+<ul>
+  <li>전위순회 : 부모 노드 - 왼쪽 자식 노드 - 오른쪽 자식 노드</li>
+  <li>중위순회 : 왼쪽 자식 노드 - 부모 노드 - 오른쪽 자식 노드</li>
+  <li>후위순회 : 왼족 자식 노드 - 오른쪽 자식 노드 - 부모 노드</li>
+</ul>
+
+<h2 id="이진탐색-트리">이진탐색 트리</h2>
+<p>노드가 가지는 데이터의 내용에 대한 기준에 따라 노드의 위치를 탐색 할 수 있는 트리를 말한다.<br />
+구현하기 위해 다음의 규칙을 가진다.</p>
+
+<ol>
+  <li>트리에서 탐색되는 모든 원소는 서로 다른 유일키를 갖는다.</li>
+  <li>왼쪽 서브 트리에 있는 원소들의 키는 그 루트의 키보다 작거나 앞선 순서를 갖는다.</li>
+  <li>오른쪽 서브 트리에 있는 원소들의 키는 그 루트의 키보다 크거나 뒤의 순서를 갖는다.</li>
+</ol>
+
+<p>어려워 보이지만 간단한 규칙으로 현재 노드를 기준으로 키가 작으면 왼쪽 크면 오른쪽을 탐색하면 된다.</p>
+
+<h2 id="트리의-활용">트리의 활용</h2>
+<p>트리는 그래프의 일종으로 그래프에 포함되는 모든 노드를 탐색하는 방법을 제안하거나 데이터를 압축하는 방법에도 활용될 수 있다.</p>
+
+<h3 id="최소신장트리">최소신장트리</h3>
+<p>신장트리란 그래프의 모든 꼭짓점을 노드로 포함하는 트리를 말하는데
+이때 노드 간의 비용르 최소로 하는 트리를 <strong>최소신장트리</strong>라고 한다.<br />
+최소신장트리를 유도하기 위해 프림 알고리즘이나 크루스칼 알고리즘을 활용한다.</p>
+
+<h3 id="프림알고리즘">프림알고리즘</h3>
+<p>프림알고리즘은 다음과 같은 과정을 거친다.</p>
+<ol>
+  <li>가중치가 가장 작은 모서리를 선택한다.</li>
+  <li>1)에서 선택된 모서리에 의해 연결된 모서리들 중 가중치가 가장 작은 모서리를 선택한다.</li>
+  <li>가중치가 같은 모서리를 임의로 <strong>하나</strong>* 선택한다.</li>
+  <li>선택된 모서링 의해 순환이 형성되는 경우 선택하지 않는다.</li>
+  <li>그래프에 모든 꼭짓점의 수가 n개 일때, n-1개의 모서리가 연결되면 종료된다.</li>
+</ol>
+
+<h3 id="크루스칼-알고리즘">크루스칼 알고리즘</h3>
+<p>크루스칼 알고리즘은 다음과 같은 과정을 거친다.</p>
+<ol>
+  <li>가중치가 가장 작은 모서리르 차례로 선택한다.</li>
+  <li>가중치가 같음 모서리는 <strong>모두</strong> 선택한다.</li>
+  <li>선택된 모서리에 의해 순환되는 경우 선택하지 않는다.</li>
+  <li>그래프에 모든 꼭짓점의 수가 n개 일때, n-1개의 모서리가 연결되면 종료된다.</li>
+</ol>
+
+<h2 id="허프만-코드">허프만 코드</h2>
+<p>파일 안에서 서로 다른 문자들도 포함되지만 같은 문자가 반복적으로 사용된수있다. 이때 문자의 발생 빈도에 따라 용량을 조절한다면 파일용량을 줄일 수 있는데 이때 허프만 알고리즘이 사용된다. 핵심은 문자의 발생 빈도가 높은 문자의 비트를 줄이는 것이다.<br />
+해당 내용은 정리가 힘들어 필요할 때 다른 자료를 찾아보기로 한다.</p>]]></content><author><name>An Jiho</name></author><category term="Discrete mathematics" /><summary type="html"><![CDATA[이산수학]]></summary></entry></feed>

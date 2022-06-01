@@ -1,0 +1,749 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>파이썬 자료형 아직 정하지 않은 이름 아직 정하지 않은 이름</title>
+<meta name="description" content="파이썬 알고리즘">
+
+
+  <meta name="author" content="An Jiho">
+  
+  <meta property="article:author" content="An Jiho">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="아직 정하지 않은 이름">
+<meta property="og:title" content="파이썬 자료형">
+<meta property="og:url" content="http://localhost:4000/python/algorithm/6/">
+
+
+  <meta property="og:description" content="파이썬 알고리즘">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-16T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-01-16T22:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/algorithm/6/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "An Jiho",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="아직 정하지 않은 이름 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/author.png" alt="An Jiho" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">An Jiho</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="파이썬 자료형">
+    <meta itemprop="description" content="파이썬 알고리즘">
+    <meta itemprop="datePublished" content="2022-01-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-01-16T22:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/python/algorithm/6/" class="u-url" itemprop="url">파이썬 자료형
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-16T00:00:00+09:00">January 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TOC</h4></header>
+              <ul class="toc__menu"><li><a href="#자료형">자료형</a><ul><li><a href="#숫자">숫자</a><ul><li><a href="#정수형">정수형</a></li></ul></li><li><a href="#매핑">매핑</a></li><li><a href="#집합">집합</a></li><li><a href="#시퀸스">시퀸스</a></li></ul></li><li><a href="#원시-타입">원시 타입</a></li><li><a href="#객체">객체</a><ul><li><a href="#불변객체">불변객체</a></li><li><a href="#가변객체">가변객체</a></li><li><a href="#is와-">is와 ==</a></li><li><a href="#속도">속도</a></li><li><a href="#참고-자료구조-자료형-추상-자료형-차이">참고) 자료구조, 자료형, 추상 자료형 차이</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>파이썬은 어떤 자료형을 제공하는지, 자료형에는 어떠한 특징이 있는지 알아보자</p>
+
+<h1 id="자료형">자료형</h1>
+<h2 id="숫자">숫자</h2>
+<h3 id="정수형">정수형</h3>
+<p>파이썬은 숫자 정수형으로 int만을 제공한다.
+int로 충분하지 않으면 자동으로 long 타입으로 변경되는 구조이다.</p>
+
+<p>bool은 논리 자료형이나 내부적으로 1(True)과 0(False)으로 처리되는 int의 서브 클래스다.<br />
+int는 object의 하위 클래스이기도 하기 때문에 object &gt; int &gt; bool의 구조를 띈다.</p>
+
+<h2 id="매핑">매핑</h2>
+<p>매핑타입은 키와 자료형으로 구성된 복합 자료형이다.<br />
+파이썬의 매핑 자료형은 딕셔너리이다.</p>
+
+<h2 id="집합">집합</h2>
+<p>파이썬 set은 집합 자료형으로 중복된 값을 갖지 않는다.</p>
+
+<h2 id="시퀸스">시퀸스</h2>
+<p>우리말로 수열로, 어떤 특정 대상의 순서 있는 나열을 뜻한다.
+시퀸스에는 불변과 가변으로 구분한다.</p>
+<ul>
+  <li>불변 : 값을 변경할 수 없다.<br />
+str, tuple, bytes가 해당한다.
+str은 변수의 값을 변경 할 수 있다고 생각할 수도 있지만 다음 결과를 보면 비교할 수 있다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">'asdf'</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="s">'asdf'</span><span class="p">))</span> <span class="c1">#2709789869488
+</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1">#2709789869488
+</span><span class="n">a</span> <span class="o">=</span> <span class="s">"qwer"</span> 
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="s">'qwer'</span><span class="p">))</span> <span class="c1">#2709789883312
+</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1">#2709789883312
+</span></code></pre></div>    </div>
+    <p>a 변수는 처음에 asdf를 참조했다가 이후 qwer를 참조하도록 주소가 변경되었을 뿐이다. asdf와 qwer는 생성도니 후에 변하지 않고 메모리 어딘가에 남아 있다. 이처럼 str은 변경할 수 없으며 불변이다.</p>
+  </li>
+</ul>
+
+<h1 id="원시-타입">원시 타입</h1>
+<p>C나 자바와 같은 대표적인 프로그래밍 언어들은 원시 타입을 제공한다<br />
+원시 타입은 메모리에 선언된 타입 크기만큼의 공간을 할당하고 그 공간을 오로지 값으로 채워넣는다.<br />
+그러나 파이썬은 원시타입이 아닌 여러 가지 작업을 수행할 수 있는 객체만을 지원한다.</p>
+
+<h1 id="객체">객체</h1>
+<p>파이썬은 모든 것이 객체로 불변 객체와 가변 객체로 구분할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>클래스</th>
+      <th>설명</th>
+      <th>불변 객체</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bool</td>
+      <td>True False</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>정수</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td>실수</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>list</td>
+      <td>리스트</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>tuple</td>
+      <td>불변인 리스트</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>str</td>
+      <td>문자</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>set</td>
+      <td>집합</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>dict</td>
+      <td>딕셔너리</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="불변객체">불변객체</h2>
+<p>int, str과 같은 불변 객체의 변수는 사실 참조일 뿐이고 실제로 값을 갖고 있는 int와 str은 모두 불변 객체다.</p>
+
+<h2 id="가변객체">가변객체</h2>
+<p>다음 코드를 참고하였을 때 가변객체의 특징을 알 수 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># 할당(b에 a값 대응이 아님)
+</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="c1">#1688010571520
+</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1">#1688010571520
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># [1, 2, 3, 4, 5]
+</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1">#1688010571520
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># [1, 2, 4, 4, 5]
+</span></code></pre></div></div>
+<h2 id="is와-">is와 ==</h2>
+<p>‘is’와 ‘==’는 파이썬에서 비교 연산자로 사용되며 이 둘의 관계는 파이썬의 객체 구조와 관련이 깊다.</p>
+<ul>
+  <li>is는 id() 값을 비교하는 함수다.</li>
+  <li>==는 두 값을 비교하는 연산자이다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">a</span> <span class="c1">#True
+</span><span class="n">a</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#True
+</span><span class="n">a</span> <span class="ow">is</span> <span class="n">a</span> <span class="c1">#True
+</span><span class="n">a</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#False 값은 동일하지만 list()로 한 번 더 묶어주면, 별도의 개체로 복사가 다른 id를 갖게 된다.
+</span></code></pre></div></div>
+
+<h2 id="속도">속도</h2>
+<p>파이썬의 객체 구조는 매우 편리하고 강력한 기능을 제공한다. 그러나 속도가 느리다는 단점을 가지고 있다.<br />
+원시 타입은 메모리에서 값을 꺼내면 끝인데 반에 객체는 값을 꺼내는 데만해도 여러 단계의 부가 작업이 필요하다.
+따라서 객체 방식을 사용하는 파이썬은 비교적 원시타입을 사용하는 C와 비교하여 속도가 매우 느린편이다.</p>
+
+<h2 id="참고-자료구조-자료형-추상-자료형-차이">참고) 자료구조, 자료형, 추상 자료형 차이</h2>
+<ul>
+  <li>자료구조 : 데이터에 효율적으로 접근하고 조작하기 위한 데이터의 조직, 관리, 저장 구조를 말한다.</li>
+  <li>자료형 : 컴파일러 또는 인터프리터에게 프로그래머가 데이터를 어떻게 사용하는지를 알려주는 데이터 속성이다.</li>
+  <li>추상 자료형 : ADT라고 물리며 자료형에 대한 수학적 모델을 지칭한다. 해당 유형의 자료에 대한 연산들을 명기한 것이다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">algorithm</a><span class="sep">, </span>
+    
+      <a href="/categories/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-01-16">January 16, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%9E%90%EB%A3%8C%ED%98%95%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F6%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F6%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F6%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/python/algorithm/5/" class="pagination--pager" title="빅오
+">이전</a>
+    
+    
+      <a href="/python/algorithm/7/" class="pagination--pager" title="리스트, 딕셔너리
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/4/" rel="permalink">wtm 프로젝트 여러 기능 결합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-10T00:00:00+09:00">May 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/3/" rel="permalink">wtm 프로젝트 kakao api
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/2/" rel="permalink">wtm 프로젝트 웹스크래핑
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/1/" rel="permalink">오밥무(wtm) 프로젝트 개요
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 An Jiho. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/python/algorithm/6/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/algorithm/6"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-an-jiohh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

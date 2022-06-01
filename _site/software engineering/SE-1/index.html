@@ -1,0 +1,705 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>소프트웨어 공학 소개 아직 정하지 않은 이름 아직 정하지 않은 이름</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="An Jiho">
+  
+  <meta property="article:author" content="An Jiho">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="아직 정하지 않은 이름">
+<meta property="og:title" content="소프트웨어 공학 소개">
+<meta property="og:url" content="http://localhost:4000/software%20engineering/SE-1/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-11T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-09-11T09:30:01+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/software%20engineering/SE-1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "An Jiho",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="아직 정하지 않은 이름 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/author.png" alt="An Jiho" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">An Jiho</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="소프트웨어 공학 소개">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-09-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-09-11T09:30:01+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/software%20engineering/SE-1/" class="u-url" itemprop="url">소프트웨어 공학 소개
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-11T00:00:00+09:00">September 11, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="소프트웨어-공학-소개">소프트웨어 공학 소개</h2>
+<ul>
+  <li>
+    <p>SE 정의 = 고품질의 SW를 개발 및 관리하기 위한 체계적인 방법론<br />
+개발차원과 관리차원 모드를 이야기한다.</p>
+  </li>
+  <li>SE 학문의 탄생 배경
+    <ol>
+      <li>H/W와 S/W의 발전 차이로 인한 소프트웨어 위기 인식<br />
+H/W : 급속 발전, 체계화, 자동화로 인하여 생산성이 높다.<br />
+S/W : 특성상 인간개입이 불가피하며 인간의 능력에 따라서 성능이 상이하기 때문에 발전 미비, 체계화 미진</li>
+      <li>소프트웨어 위기
+개발비용 측면 : H/W에 비해 개발 비용 증대<br />
+보수비용 측면 : S/W 개발 비용보다 보수 비용 증대<br />
+개발적체현상(backlog : 미개발 프로그램이 적체하는 것)로 인한 S/W 기술자 부족  =  보수 비용 증가<br />
+S/W 트러블의 사회 문제화<br />
+이로인하여 체계적인 방법론(SE)가 요구됬다.</li>
+    </ol>
+  </li>
+  <li>SE기법의 2가지 흐름
+    <ul>
+      <li>60년대 이후 : 구조적인(절차적인) 기법</li>
+      <li>80년대 이후 : 객체지향 기법</li>
+    </ul>
+  </li>
+  <li>SE의 목표
+S/W 개발/관리를 자동화를 하자</li>
+</ul>
+
+<h2 id="소프트웨어-품질-요소">소프트웨어 품질 요소</h2>
+<ul>
+  <li>기능성(정확성) : 요구사항이 정확히 반영</li>
+  <li>신뢰성(reliabiliy) : 오류가 적을 것</li>
+  <li>개발 효율성(Efficiency) : 개발비용(시간, 자원)이 적게 들 것</li>
+  <li>처리시간 효율성(Efficiency) : H/W로 많이 보완(중요도 떨어짐)</li>
+  <li>자원 효율성(Efficiency) : 제한된 메모리 사용을 통한 최적화</li>
+  <li>사용성(운용성, usabolity) : 사용의 편이성</li>
+  <li>안정성 : 안전하게 동작할 성질
+    <ol>
+      <li>보안성(무결성) + 장애대책 + 오버로드에 견디는 성질</li>
+      <li>무결성(integrity) : 허용되지 않는 사용이나 자료 변경을 제어하는 성질</li>
+    </ol>
+  </li>
+  <li>이해성(보수성) : 유지보수측명</li>
+  <li>이식성(portability) : 다양한 H/W, S/W 플랫폼에 적용</li>
+  <li>상호운영성(interoperability) : 다른 시스템과 정보 교환 가능 정도(연동)</li>
+  <li>유연성(flexibility) : 요구사항에 따라 쉽게 수정될 수 있는 성질</li>
+</ul>
+
+<h2 id="시스템의-구성요소">시스템의 구성요소</h2>
+<p><img src="https://i.esdrop.com/d/l89w6y38niqs/IUM9QWeNVs.jpg" alt="시스템 구성요소" /></p>
+
+<h2 id="se의-목표">SE의 목표</h2>
+<p>SE를 통한 자동화기술을 통한 S/W의 위기 극복이 목표이다.<br />
+이과정에서 재사용기술(모듈화, 부품식), 자동화 기술이 활용된다.</p>
+
+<ol>
+  <li>재사용 기술
+    <ul>
+      <li>S/W개발 관련 지식을 표준화해서 재사용(자동 생성)<br />
+범용 표준 부품화 : 프로그램 모듈을 부품화(개발기간 단축)<br />
+예) C언어의 표준함수(라이브러리)<br />
+유틸리티와 표준 패키지 : 응용의 서비스요구를 받아서 OS에 처리 의뢰<br />
+예) vscode, java 표준 패키지<br />
+지식 DB : 부품화된 지식을 관리하는 시스템</li>
+    </ul>
+  </li>
+  <li>자동화 기술 : CASE 도구 (라이프사이클의 자동화)
+초기 단계일수록 추상적이기 때문에 초기단계의 자동화가 더욱 어렵다.
+    <ul>
+      <li>점점 초기단계(분석, 설계)의 자동화에 주력
+코딩 단계의 자동화 : 고급언어(기계어 자동생성)<br />
+설계 단계의 자동화 : 설계 사양(프로그램구조, 데이터구조), 모듈간 I/F사양으로 프로그램 자동 생성</li>
+      <li>재사용기술 활용에 의한 자동화 : 표준부품, 지식 DB활용 + AI 기술</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="sw의-라이프사이클-모형">S/W의 라이프사이클 모형</h2>
+<ul>
+  <li>라이프사이클 : 요구에 의한 S/W의 탄생 ~ 파기</li>
+  <li>라이프사이클 구분의 필요성 : 요구사항의 고도화, 대규모화</li>
+  <li>다양한 라이프사이클 모델
+    <ol>
+      <li>폭포수 모형 : 추상적에서 구체화되어가는 과정
+<img src="https://i.esdrop.com/d/l89w6y38niqs/OJqAzaD7Nz.png" alt="폭포수 모형" /></li>
+      <li>프로토타이핑 모형
+<img src="https://i.esdrop.com/d/l89w6y38niqs/7sKivzJhxT.png" alt="프로토타이핑 모형" />
+프로토타입 : 정식 개발 전에 상요자 인터페이스나 중요기능만을 구현한 시제품<br />
+전통적인 모델에 프로토타입을 제작함으로써 단점(요구사항 누락)을 극복</li>
+      <li>나선형 모형
+폭포수 모형, 프로토타이핑 모형의 개선 모델 : 프로토타입 + 위험성 분석 추가 + 순환 모델<br />
+<img src="https://i.esdrop.com/d/l89w6y38niqs/iRXRolm5tj.png" alt="나선형 모형" />
+계획 및 정의(Planning)<br />
+위험 분석(Risk Analysis)<br />
+제품 개발(Development)<br />
+고객 평가(Evaluation)<br />
+위의 4개의 과정을 순환하며 제품을 개발한다.</li>
+    </ol>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#software-engineering" class="page__taxonomy-item p-category" rel="tag">Software Engineering</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-09-11">September 11, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4+%EA%B3%B5%ED%95%99+%EC%86%8C%EA%B0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fsoftware%2520engineering%2FSE-1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsoftware%2520engineering%2FSE-1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsoftware%2520engineering%2FSE-1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/data%20base/DB/" class="pagination--pager" title="까먹을 때쯤 쳐다보는 MySQL 기초
+">이전</a>
+    
+    
+      <a href="/language/C++/" class="pagination--pager" title="C++ 기초
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/4/" rel="permalink">wtm 프로젝트 여러 기능 결합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-10T00:00:00+09:00">May 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/3/" rel="permalink">wtm 프로젝트 kakao api
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/2/" rel="permalink">wtm 프로젝트 웹스크래핑
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/1/" rel="permalink">오밥무(wtm) 프로젝트 개요
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 An Jiho. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/software%20engineering/SE-1/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/software%20engineering/SE-1"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-an-jiohh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

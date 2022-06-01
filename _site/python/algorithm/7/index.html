@@ -1,0 +1,807 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>리스트, 딕셔너리 아직 정하지 않은 이름 아직 정하지 않은 이름</title>
+<meta name="description" content="파이썬 알고리즘">
+
+
+  <meta name="author" content="An Jiho">
+  
+  <meta property="article:author" content="An Jiho">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="아직 정하지 않은 이름">
+<meta property="og:title" content="리스트, 딕셔너리">
+<meta property="og:url" content="http://localhost:4000/python/algorithm/7/">
+
+
+  <meta property="og:description" content="파이썬 알고리즘">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-18T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-01-18T22:30:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/algorithm/7/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "An Jiho",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="아직 정하지 않은 이름 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/author.png" alt="An Jiho" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">An Jiho</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="리스트, 딕셔너리">
+    <meta itemprop="description" content="파이썬 알고리즘">
+    <meta itemprop="datePublished" content="2022-01-18T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-01-18T22:30:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/python/algorithm/7/" class="u-url" itemprop="url">리스트, 딕셔너리
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-18T00:00:00+09:00">January 18, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TOC</h4></header>
+              <ul class="toc__menu"><li><a href="#리스트">리스트</a><ul><li><a href="#리스트의-활용-방법">리스트의 활용 방법</a></li><li><a href="#리스트의-특징">리스트의 특징</a></li></ul></li><li><a href="#딕셔너리">딕셔너리</a><ul><li><a href="#딕셔너리의-활용방법">딕셔너리의 활용방법</a></li><li><a href="#딕셔너리-모듈">딕셔너리 모듈</a><ul><li><a href="#defaultdict객체">defaultdict객체</a></li><li><a href="#counter-객체">Counter 객체</a></li><li><a href="#ordereddict-객체">OrderedDict 객체</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>리스트와 딕셔너리는 파이썬을 사용하면서 가장 번번하게 접하는 자료형이다.
+이번에 구조, 원리, 문법에 대해 상세히 다뤄본다.</p>
+
+<h1 id="리스트">리스트</h1>
+<p>리스트는 순서대로 저장하는 시퀸스이자 변경 가능한 목록을 말한다.<br />
+입력 순서가 유지되며, 동적 배열로 구현되어 있다.<br />
+파이썬 리스트는 다양한 기능을 제공한다는 점이 매우 큰 장점이다.<br />
+이러한 점은 코딩 테스트에서 다른 언어에 비해 매우 유리한 조건을 갖는 셈이다.</p>
+
+<ul>
+  <li>리스트의 주요 연산 시간 복잡도</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>연산</th>
+      <th>시간 복잡도</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>len(a)</td>
+      <td>O(1)</td>
+      <td>전체 요소의 개수를 리턴한다.</td>
+    </tr>
+    <tr>
+      <td>a[i]</td>
+      <td>O(1)</td>
+      <td>인덱스 i의 요소를 가져온다.</td>
+    </tr>
+    <tr>
+      <td>a[i:j]</td>
+      <td>O(k)</td>
+      <td>i부터 j까지 슬라이스의 길이만큼인 k개의 요소를 가져온다.  이경우 객체 k를 조회하므로 O(k)이다.</td>
+    </tr>
+    <tr>
+      <td>elem in a</td>
+      <td>O(n)</td>
+      <td>elem 요소가 존재하는지 확인한다. 순차탐색으로 n만큼 걸린다.</td>
+    </tr>
+    <tr>
+      <td>a.count(elem)</td>
+      <td>O(n)</td>
+      <td>elem요소의 개수를 리턴한다.</td>
+    </tr>
+    <tr>
+      <td>a.index(elem)</td>
+      <td>O(n)</td>
+      <td>elem요소의 인덱스를 리턴한다.</td>
+    </tr>
+    <tr>
+      <td>a.append(elem)</td>
+      <td>O(1)</td>
+      <td>리스트 마지막에 elem 요소를 추가한다.</td>
+    </tr>
+    <tr>
+      <td>a.pop()</td>
+      <td>O(1)</td>
+      <td>리스트 마지막 요소를 추출한다. 스택 연산이다.</td>
+    </tr>
+    <tr>
+      <td>a.pop(0)</td>
+      <td>O(n)</td>
+      <td>리스트 첫번째 요소를 추출한다. 큐의 연산이다.</td>
+    </tr>
+    <tr>
+      <td>del a[i]</td>
+      <td>O(n)</td>
+      <td>i에 따라 O()가 다르다.</td>
+    </tr>
+    <tr>
+      <td>a.sort()</td>
+      <td>O(n log n)</td>
+      <td>팀소트를 사용하여 정렬한다.</td>
+    </tr>
+    <tr>
+      <td>min(a), max(a)</td>
+      <td>O(n)</td>
+      <td>최솟값/최댓값을 계산하기 위해서는 전체를 선형 탐색해야 한다.</td>
+    </tr>
+    <tr>
+      <td>a.pop(0)</td>
+      <td>O(n)</td>
+      <td>뒤집는다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="리스트의-활용-방법">리스트의 활용 방법</h2>
+<p>리스트의 간단한 활용 방법이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#[1,2,3,4]
+</span><span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#[1,2,3,5,4]
+</span><span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'안녕'</span><span class="p">)</span> <span class="c1">#[1,2,3,5,4,'안녕'] 문자도 삽입가능
+</span></code></pre></div></div>
+
+<h2 id="리스트의-특징">리스트의 특징</h2>
+<p>파이썬의 리스트는 다음과 같은 두가지의 형태를 보인다.</p>
+<ol>
+  <li>연속된 공간에 요소를 배치하는 배열의 장점</li>
+  <li>다양한 타입을 연결해 배치하는 연결 리스트의 장점</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>
+  <span class="n">PyObject_VAR_HEAD</span> <span class="c1">//매크로문이여서 세미콜론을 붙히지 않음</span>
+  <span class="n">Pyobject</span> <span class="o">**</span><span class="n">ob_item</span><span class="p">;</span>
+  <span class="n">Py_ssize_t</span> <span class="n">allocated</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">PyListObject</span><span class="p">;</span>
+</code></pre></div></div>
+<p>CPython에서 리스트는 요소에 대한 대한 포인터 목록(ob_item)을 갖고 있는 구조체로 선언되어있다.
+리스트에 요소를 추가하거나 조작하기 시작하면 ob_item의 사이즈를 조절해 나가는 형태로 구현되어 있다.</p>
+<ul>
+  <li>객체에 대한 포인터 목록으로 구현된 파이썬 리스트
+<img src="/assets/images/python_list.jpg" alt="객체에 대한 포인터 목록으로 구현된 파이썬 리스트" /></li>
+</ul>
+
+<p>위와 같은 형태로 연결 리스트에 대한 포인터 목록을 배열 형태로 관리하고 있어 배열과 연결 리스트의 장점을 합친듯 한 기능을 자랑한다.<br />
+하지만 인덱스를 조회하는 데에 모든 포인터의 위치를 찾아가서 타입 코드를 확인하고 값을 일일히 살펴봐야 함으로 속도 면에서 훨씬 불리하다.</p>
+
+<h1 id="딕셔너리">딕셔너리</h1>
+<p>파이썬의 딕셔너리는 키/값 구조로 이뤄진 딕셔너리를 말한다. 내부적으로 해시 테이블로 구현되어 있다.</p>
+
+<ul>
+  <li>딕셔너리의 주요 연산 시간 복잡도</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>연산</th>
+      <th>시간 복잡도</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>len(a)</td>
+      <td>O(1)</td>
+      <td>요소의 개수를 리턴한다.</td>
+    </tr>
+    <tr>
+      <td>a[key]</td>
+      <td>O(1)</td>
+      <td>키를 조회하여 값을 리턴한다.</td>
+    </tr>
+    <tr>
+      <td>a[key] = value</td>
+      <td>O(1)</td>
+      <td>키/값을 삽입한다.</td>
+    </tr>
+    <tr>
+      <td>key in a</td>
+      <td>O(1)</td>
+      <td>딕셔너리에 키가 존재하는지 확인한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>딕셔너리는 대부분의 연산이 O(1)에 처리 가능한 매우 우수한 자료형이다.<br />
+3.7+에서 딕셔너리는 입력 순서가 유지된다. 하지만 인터프리터의 버전에 따라 순서유지가 되지 않을 수도 있으므로 권장하지 않는다.</p>
+
+<h2 id="딕셔너리의-활용방법">딕셔너리의 활용방법</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s">'key1'</span><span class="p">:</span><span class="s">'value1'</span><span class="p">,</span> <span class="s">'key2'</span><span class="p">:</span><span class="s">'value2'</span><span class="p">}</span>
+<span class="n">a</span><span class="p">[</span><span class="s">'key3'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'value3'</span> <span class="c1"># {'key1':'value1', 'key2':'value2', 'key3':'value3'}
+</span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="p">.</span><span class="n">item</span><span class="p">():</span> <span class="c1">#item()메소드를 사용하여 키와 값을 꺼내올 수 있다.
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="c1"># key1 value1
+</span></code></pre></div></div>
+
+<h2 id="딕셔너리-모듈">딕셔너리 모듈</h2>
+<p>딕셔너리와 관련된 특수한 형태의 컨테이너 자료형인 defaultdic, Counter, OrderedDict에 대해 알아본다.</p>
+
+<h3 id="defaultdict객체">defaultdict객체</h3>
+<p>defaultdict 객체는 존재하지 않는 키를 조회할 경우, 에러 메세지를 출력하지않고 디폴트 값을 기준으로 해당 키에 대한 딕셔너리 아이템을 생성해준다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#{'A': 5, 'B': 4}
+</span></code></pre></div></div>
+
+<h3 id="counter-객체">Counter 객체</h3>
+<p>Counter 객체는 아이템의 개수를 계산해 딕셔너리로 리턴한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># {5: 3, 6: 2, 1: 1, 2: 1, 3: 1, 4: 1}
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># [(5, 3)] 가장높은 빈도 요소 추출
+</span></code></pre></div></div>
+
+<h3 id="ordereddict-객체">OrderedDict 객체</h3>
+<p>현재는 딕셔너리가 순서가 유지되지만 과거 유지가 되지않았기 때문에 OrderedDict를 사용하였다.<br />
+현재는 사용되지 않으며 하위 호환성을 위하여 남겨져있다. 그러나 하위 버전의 인터프리터를 사용할 때 사용할 것을 인지해 두어야한다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">algorithm</a><span class="sep">, </span>
+    
+      <a href="/categories/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-01-18">January 18, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%A6%AC%EC%8A%A4%ED%8A%B8%2C+%EB%94%95%EC%85%94%EB%84%88%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F7%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F7%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Falgorithm%2F7%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/python/algorithm/6/" class="pagination--pager" title="파이썬 자료형
+">이전</a>
+    
+    
+      <a href="/python/algorithm/8/" class="pagination--pager" title="문자열 조작
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/4/" rel="permalink">wtm 프로젝트 여러 기능 결합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-10T00:00:00+09:00">May 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/3/" rel="permalink">wtm 프로젝트 kakao api
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/2/" rel="permalink">wtm 프로젝트 웹스크래핑
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/1/" rel="permalink">오밥무(wtm) 프로젝트 개요
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-02T00:00:00+09:00">May 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로젝트
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:dkswlgh99@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/an-jiohh" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 An Jiho. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/python/algorithm/7/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/algorithm/7"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-an-jiohh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
